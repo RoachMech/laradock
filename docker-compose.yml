@@ -678,6 +678,9 @@ services:
 ### Networks Setup ############################################
 
 networks:
+  default:
+      external:
+        name: nginx-proxy
   frontend:
     driver: "bridge"
   backend:
