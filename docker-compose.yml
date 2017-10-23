@@ -58,6 +58,7 @@ services:
         - "${WORKSPACE_SSH_PORT}:22"
       tty: true
       networks:
+        - default
         - frontend
         - backend
 
@@ -101,6 +102,7 @@ services:
       environment:
         - PHP_IDE_CONFIG=${PHP_IDE_CONFIG}
       networks:
+        - default
         - backend
 
 ### PHP Worker Container #####################################
@@ -116,6 +118,7 @@ services:
       extra_hosts:
         - "dockerhost:${DOCKER_HOST_IP}"
       networks:
+        - default
         - backend
 
 ### NGINX Server Container ##################################
@@ -142,6 +145,7 @@ services:
       depends_on:
         - php-fpm
       networks:
+        - default
         - frontend
         - backend
 
@@ -227,6 +231,7 @@ services:
       ports:
         - "${MYSQL_PORT}:3306"
       networks:
+        - default
         - backend
 
 ### Percona Container #########################################
@@ -355,6 +360,7 @@ services:
       ports:
         - "${REDIS_PORT}:6379"
       networks:
+        - default
         - backend
 
 ### Aerospike c Container ###################################
