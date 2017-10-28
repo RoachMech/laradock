@@ -2,6 +2,10 @@
 # General Setup
 ############################
 
+NGINX_VIRTUAL_HOST=dockertest.com,www.dockertest.com
+NGINX_LETSENCRYPT_HOST=dockertest.com,www.dockertest.com
+NGINX_LETSENCRYPT_EMAIL=roachmech@me.com
+
 ### Application Path
 # Point to your application code, will be available at `/var/www`.
 
